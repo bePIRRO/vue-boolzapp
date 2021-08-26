@@ -1,0 +1,15 @@
+/* body */
+
+body {
+    background: 
+    linear-gradient(#009688 0 0) top,
+    linear-gradient(#d9dbd5 0 0) bottom;
+
+    background-size: 
+    100% 20%,
+    100% 80%;
+
+    background-repeat: no-repeat;
+}
+
+
