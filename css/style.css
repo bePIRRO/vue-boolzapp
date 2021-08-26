@@ -1,5 +1,10 @@
-/* body */
+/*! utils*/
+.pointer {
+    cursor: pointer;
+}
 
+
+/* body */
 body {
     background: 
     linear-gradient(#009688 0 0) top,
@@ -12,6 +17,7 @@ body {
     background-repeat: no-repeat;
 }
 
+/* main-box */
 #box {
     background-color: #fff;
     min-width: 80%;
@@ -23,4 +29,41 @@ border-right: 1px solid #000;
 
 .chat {
 
+}
+
+
+/* header */
+.top-bar {
+    background-color: #eaeaea;
+    height: 100px;
+    line-height: 100px;
+}
+
+#profile {
+    max-height: 80%;
+}
+
+#buttons i {
+    margin: 10px;
+    color: #b1b1b1;
+}
+
+/* notification */
+#notification {
+    background-color: #8edafc;
+    height: 100px;
+}
+
+#notification i {
+    color: #8edafc;
+    background-color: #fff;
+}
+
+.grey {
+    color: #4f7485;
+    text-decoration: underline;
+}
+
+#search {
+    width: 95%;
 }
