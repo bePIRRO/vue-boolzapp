@@ -32,6 +32,12 @@ border-right: 1px solid #000;
 }
 
 
+/* contact */
+.contact, .contact img {
+    max-height: 80px;
+}
+
+
 /* header */
 .top-bar {
     background-color: #eaeaea;
@@ -39,14 +45,11 @@ border-right: 1px solid #000;
     line-height: 100px;
 }
 
-#profile {
-    max-height: 80%;
-}
-
 #buttons i {
     margin: 10px;
     color: #b1b1b1;
 }
+
 
 /* notification */
 #notification {
@@ -59,11 +62,20 @@ border-right: 1px solid #000;
     background-color: #fff;
 }
 
-.grey {
-    color: #4f7485;
-    text-decoration: underline;
+#search {
+    border: 0;
+    padding-left: 50px;
 }
 
-#search {
-    width: 95%;
+#search-bar {
+    position: relative;
+    background-color: #eaeaea;
+}
+
+#search-bar i {
+    position: absolute;
+    z-index: 1;
+    top: 58%;
+    left: 20px;
+    transform: translateY(-50%);
 }

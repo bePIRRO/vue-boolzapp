@@ -26,11 +26,12 @@
                 <!-- left side -->
 
                 <!-- topbar -->
-                <div class="col-4 contacts">
+                <section class="col-4 contacts">
                     <header class="top-bar d-flex justify-content-around">
                         <div class="col-9 ">
-
-                            <img src="./img/avatar_2.jpg" alt="Profilo" class="rounded-circle pointer ms-3" id="profile">
+                            <figure class="contact">
+                                <img src="./img/avatar_io.jpg" alt="Profilo" class="rounded-circle pointer ms-3" id="profile">
+                            </figure>
                         </div>
                         <div class="col-3 d-flex justify-content-around align-items-center pe-5" id="buttons">
                             <i class="fas fa-circle-notch fa-2x pointer"></i>
@@ -42,28 +43,29 @@
                     <!-- blue notification -->
                     <div class="d-flex align-items-center ps-4" id="notification">
                         <div class="col-3">
-                            <i class="fas fa-bell-slash fa-3x rounded-circle p-1"></i>
+                            <i class="fas fa-bell-slash fa-2x rounded-circle p-3"></i>
                         </div>
 
                         <div class="col-9">
-                            <div>Ricevi notifiche di nuovi messaggi</div>
-                            <div class="grey pointer">Attiva notifiche desktop</div>
+                            <div class="h6">Ricevi notifiche di nuovi messaggi</div>
+                            <div class="text-muted pointer"><u>Attiva notifiche desktop</u></div>
                         </div>
                     </div>
                     
                     <!-- search-bar -->
-                    <div>
-                        <input type="text" placeholder="&#128269; Cerca o inizia una nuova chat" class="m-2" id="search">
-                    </div>
+                    <section class="p-2" id="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" class="w-100" id="search">
+                    </section>
                     
-                </div>
+                </section>
 
                 <!-- right side -->
-                <div class="col-8 chat">
+                <section class="col-8 chat">
                     <header class="top-bar">
 
                     </header>
-                </div>
+                </section>
                 
             </div>
         </div>
