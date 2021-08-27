@@ -6,7 +6,10 @@ const app = new Vue({
     el: "#app",
     data: {
         user: {
-            name: "Mip"
-        }
-    }
-})
+            name: "Nuovo Nome",
+            avatar: "_io",
+        },
+        contacts,
+    },
+    methods: {},
+});

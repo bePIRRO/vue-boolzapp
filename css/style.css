@@ -35,6 +35,13 @@ border-right: 1px solid #000;
 /* contact */
 .contact, .contact img {
     max-height: 80px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+#chats li {
+    list-style-type: none;
+    border-bottom: 1px solid #eaeaea;
 }
 
 
