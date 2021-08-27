@@ -60,20 +60,20 @@ border-right: 1px solid #000;
     background-color: #fff;
 }
 
-#search {
+.search {
     border: 0;
     padding-left: 50px;
 }
 
-#search-bar {
+.search-bar {
     position: relative;
     background-color: #eaeaea;
 }
 
-#search-bar i {
+.search-bar .fa-search {
     position: absolute;
     z-index: 1;
-    top: 58%;
+    top: 50%;
     left: 20px;
     transform: translateY(-50%);
 }
@@ -99,6 +99,6 @@ border-right: 1px solid #000;
 }
 
 #text-input {
-    height: 100px;
+    height: 80px;
     background-color: #eaeaea;
 }

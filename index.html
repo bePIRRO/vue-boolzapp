@@ -30,10 +30,12 @@
                     <header class="top-bar d-flex justify-content-around ">
                         <div class="col-9 ">
                             <figure class="contact pointer">
-                                <img src="./img/avatar_io.jpg" alt="Profilo">
-                                <div class="h5 d-inline ms-2">
-                                    bePIRRO
-                                </div>
+                                <img 
+                                    :src="`./img/avatar${user.avatar}.jpg`" 
+                                    :alt="user.name">
+                                    <div class="h5 d-inline ms-2">
+                                        {{user.name}}
+                                    </div>
                             </figure>
                         </div>
                         <div class="col-3 d-flex justify-content-around align-items-center pe-5" id="buttons">
@@ -56,13 +58,13 @@
                     </div>
                     
                     <!-- search-bar -->
-                    <section class="p-2" id="search-bar">
+                    <section class="p-2 search-bar">
                         <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat" class="w-100" id="search">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" class="w-100 search">
                     </section>
 
                     <!-- contacts list -->
-                    <section class="overflow-auto" id="chats">
+                    <section class="flex-grow-1 flex-shrink overflow-auto" id="chats">
                         <ul class="p-0">
                             <li class="py-2 pointer" v-for="contact in contacts">
                                 <figure class="contact">
@@ -80,16 +82,39 @@
                 </section>
 
                 <!-- right side -->
-                <section class="col-8 chat d-flex flex-column">
-                    <header class="top-bar">
 
+                <!-- topbar -->
+                <section class="col-8 chat d-flex flex-column">
+                    <header class="top-bar d-flex justify-content-around ">
+                        <div class="col-10 ">
+                            <figure class="contact pointer">
+                                <img 
+                                    :src="`./img/avatar${user.avatar}.jpg`" 
+                                    :alt="user.name">
+                                    <div class="h5 d-inline ms-2">
+                                        {{user.name}}
+                                    </div>
+                            </figure>
+                        </div>
+                        <div class="col-2 d-flex justify-content-around align-items-center pe-3" id="buttons">
+                            <i class="fas fa-search fa-2x pointer"></i>
+                            <i class="fas fa-ellipsis-h fa-2x pointer"></i>
+                        </div>
                     </header>
 
-                    <section class="h-100" id="chatbox">
+                    <!-- chatbox -->
+                    <section class="flex-grow-1 overflow-auto" id="chatbox">
 
                     </section>
 
+                    <!-- type text -->
                     <footer class="justify-content-end" id="text-input">
+                        <i class="far fa-smile fa-2x"></i>
+                        <section class="p-2 search-bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" class="w-50 search">
+
+                        </section>
 
                     </footer>
 
