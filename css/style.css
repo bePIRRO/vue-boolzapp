@@ -93,3 +93,12 @@ border-right: 1px solid #000;
 .chat {
 
 }
+
+#chatbox {
+    background-image: url(../img/mine.jpg);
+}
+
+#text-input {
+    height: 100px;
+    background-color: #eaeaea;
+}
