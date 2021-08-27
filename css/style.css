@@ -102,3 +102,7 @@ border-right: 1px solid #000;
     height: 80px;
     background-color: #eaeaea;
 }
+
+footer .search {
+    height: 50px;
+}

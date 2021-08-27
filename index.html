@@ -27,8 +27,8 @@
 
                 <!-- topbar -->
                 <section class="col-4 contacts d-flex flex-column">
-                    <header class="top-bar d-flex justify-content-around ">
-                        <div class="col-9 ">
+                    <header class="top-bar d-flex justify-content-between ">
+                        <div class="col-6 ">
                             <figure class="contact pointer">
                                 <img 
                                     :src="`./img/avatar${user.avatar}.jpg`" 
@@ -38,7 +38,7 @@
                                     </div>
                             </figure>
                         </div>
-                        <div class="col-3 d-flex justify-content-around align-items-center pe-5" id="buttons">
+                        <div class="col-5 d-flex justify-content-around align-items-center pe-2" id="buttons">
                             <i class="fas fa-circle-notch fa-2x pointer"></i>
                             <i class="fas fa-comment-alt fa-2x pointer"></i>
                             <i class="fas fa-ellipsis-v fa-2x pointer"></i>
@@ -85,8 +85,8 @@
 
                 <!-- topbar -->
                 <section class="col-8 chat d-flex flex-column">
-                    <header class="top-bar d-flex justify-content-around ">
-                        <div class="col-10 ">
+                    <header class="top-bar d-flex justify-content-between ">
+                        <div class="col-3 ">
                             <figure class="contact pointer">
                                 <img 
                                     :src="`./img/avatar${user.avatar}.jpg`" 
@@ -108,14 +108,18 @@
                     </section>
 
                     <!-- type text -->
-                    <footer class="justify-content-end" id="text-input">
-                        <i class="far fa-smile fa-2x"></i>
-                        <section class="p-2 search-bar">
+                    <footer class="d-flex align-items-center justify-content-around col-12" id="text-input">
+                        <div class="col-1 text-center">
+                            <i class="far fa-smile fa-2x pointer"></i>
+                        </div>
+                        <section class="p-2 search-bar col-9">
                             <i class="fas fa-search"></i>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat" class="w-50 search">
-
+                            <input type="text" placeholder="Scrivi un messaggio" class="w-100 search">
                         </section>
-
+                        
+                        <div class="col-1 text-center">
+                            <i class="fas fa-microphone fa-2x pointer"></i>
+                        </div>
                     </footer>
 
                 </section>
