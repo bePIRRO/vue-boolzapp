@@ -13,6 +13,7 @@
         <!-- <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6/locale/it.js"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./img/Whatsapp_37229.ico">
     <title>Boolzapp</title>
 </head>
 
@@ -26,7 +27,7 @@
                 <!-- left side -->
 
                 <!-- topbar -->
-                <section class="col-4 contacts d-flex flex-column">
+                <section class="col-4 contacts d-flex flex-column flex-shrink-0">
                     <header class="top-bar d-flex justify-content-between ">
                         <div class="col-6 ">
                             <figure class="contact pointer">
@@ -34,7 +35,7 @@
                                     :src="`./img/avatar${user.avatar}.jpg`" 
                                     :alt="user.name">
                                     <div class="h5 d-inline ms-2">
-                                        {{user.name}}
+                                        {{data.user.name}}
                                     </div>
                             </figure>
                         </div>
@@ -46,7 +47,7 @@
                     </header>
 
                     <!-- blue notification -->
-                    <div class="d-flex align-items-center ps-4" id="notification">
+                    <div class="d-flex align-items-center ps-4 flex-shrink-0" id="notification">
                         <div class="col-3">
                             <i class="fas fa-bell-slash fa-2x rounded-circle p-3"></i>
                         </div>
@@ -64,9 +65,9 @@
                     </section>
 
                     <!-- contacts list -->
-                    <section class="flex-grow-1 flex-shrink overflow-auto" id="chats">
+                    <section class="flex-grow-1 overflow-auto" id="chats">
                         <ul class="p-0">
-                            <li class="py-2 pointer" v-for="contact in contacts">
+                            <li class="py-2 pointer" v-for="(contact, index) in contacts">
                                 <figure class="contact">
                                     <img 
                                     :src="`./img/avatar${contact.avatar}.jpg`" 
