@@ -18,7 +18,7 @@
 
 <body>
 
-    <section class="main-box">
+    <section class="main-box" id="app">
 
         <div class="container-fluid vh-100 d-flex p-4">
             <div class="container d-flex p-0" id="box">
@@ -26,11 +26,14 @@
                 <!-- left side -->
 
                 <!-- topbar -->
-                <section class="col-4 contacts" id="app">
-                    <header class="top-bar d-flex justify-content-around">
+                <section class="col-4 contacts d-flex flex-column">
+                    <header class="top-bar d-flex justify-content-around ">
                         <div class="col-9 ">
                             <figure class="contact pointer">
                                 <img src="./img/avatar_io.jpg" alt="Profilo">
+                                <div class="h5 d-inline ms-2">
+                                    bePIRRO
+                                </div>
                             </figure>
                         </div>
                         <div class="col-3 d-flex justify-content-around align-items-center pe-5" id="buttons">
@@ -41,7 +44,7 @@
                     </header>
 
                     <!-- blue notification -->
-                    <div class="d-flex align-items-center ps-4" id="notification">
+                    <div class="d-flex align-items-center ps-4 mt-1" id="notification">
                         <div class="col-3">
                             <i class="fas fa-bell-slash fa-2x rounded-circle p-3"></i>
                         </div>
@@ -59,9 +62,9 @@
                     </section>
 
                     <!-- contacts list -->
-                    <section id="chats">
-                        <ul class="p-0 mt-2">
-                            <li v-for="contact in contacts">
+                    <section class="overflow-auto" id="chats">
+                        <ul class="p-0">
+                            <li class="py-2 pointer" v-for="contact in contacts">
                                 <figure class="contact">
                                     <img 
                                     :src="`./img/avatar${contact.avatar}.jpg`" 
