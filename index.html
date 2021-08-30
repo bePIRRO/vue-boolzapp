@@ -1,136 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6/locale/it.js"></script> -->
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" href="./img/Whatsapp_37229.ico">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/dayjs.min.js"
+      integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" href="./img/Whatsapp_37229.ico" />
     <title>Boolzapp</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <section class="main-box" id="app">
+      <div class="container-fluid vh-100 d-flex p-4">
+        <div class="container d-flex p-0" id="box">
+          <!-- left side -->
 
-        <div class="container-fluid vh-100 d-flex p-4">
-            <div class="container d-flex p-0" id="box">
-                
-                <!-- left side -->
+          <!-- topbar -->
+          <section class="col-4 contacts d-flex flex-column flex-shrink-0">
+            <header class="top-bar d-flex justify-content-between">
+              <div class="col-6">
+                <figure class="contact pointer">
+                  <img
+                    :src="`./img/avatar${data.user.avatar}.jpg`"
+                    :alt="data.user.name"
+                  />
+                  <div class="h5 d-inline ms-2">{{data.user.name}}</div>
+                </figure>
+              </div>
+              <div
+                class="
+                  col-5
+                  d-flex
+                  justify-content-around
+                  align-items-center
+                  pe-2
+                "
+                id="buttons"
+              >
+                <i class="fas fa-circle-notch fa-2x pointer"></i>
+                <i class="fas fa-comment-alt fa-2x pointer"></i>
+                <i class="fas fa-ellipsis-v fa-2x pointer"></i>
+              </div>
+            </header>
 
-                <!-- topbar -->
-                <section class="col-4 contacts d-flex flex-column flex-shrink-0">
-                    <header class="top-bar d-flex justify-content-between ">
-                        <div class="col-6 ">
-                            <figure class="contact pointer">
-                                <img 
-                                    :src="`./img/avatar${data.user.avatar}.jpg`" 
-                                    :alt="data.user.name">
-                                    <div class="h5 d-inline ms-2">
-                                        {{data.user.name}}
-                                    </div>
-                            </figure>
-                        </div>
-                        <div class="col-5 d-flex justify-content-around align-items-center pe-2" id="buttons">
-                            <i class="fas fa-circle-notch fa-2x pointer"></i>
-                            <i class="fas fa-comment-alt fa-2x pointer"></i>
-                            <i class="fas fa-ellipsis-v fa-2x pointer"></i>
-                        </div>
-                    </header>
+            <!-- blue notification -->
+            <div
+              class="d-flex align-items-center ps-4 flex-shrink-0"
+              id="notification"
+            >
+              <div class="col-3">
+                <i class="fas fa-bell-slash fa-2x rounded-circle p-3"></i>
+              </div>
 
-                    <!-- blue notification -->
-                    <div class="d-flex align-items-center ps-4 flex-shrink-0" id="notification">
-                        <div class="col-3">
-                            <i class="fas fa-bell-slash fa-2x rounded-circle p-3"></i>
-                        </div>
-
-                        <div class="col-9">
-                            <div class="h6">Ricevi notifiche di nuovi messaggi</div>
-                            <div class="text-muted pointer"><u>Attiva notifiche desktop</u></div>
-                        </div>
-                    </div>
-                    
-                    <!-- search-bar -->
-                    <section class="p-2 search-bar">
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat" class="w-100 search">
-                    </section>
-
-                    <!-- contacts list -->
-                    <section class="flex-grow-1 overflow-auto" id="chats">
-                        <ul class="p-0">
-                            <li class="py-2 pointer" v-for="(contact, index) in data.contacts">
-                                <figure class="contact">
-                                    <img 
-                                    :src="`./img/avatar${contact.avatar}.jpg`" 
-                                    :alt="contact.name">
-                                    <div class="h5 d-inline ms-2">
-                                        {{contact.name}}
-                                    </div>
-                                </figure>
-                            </li>
-                        </ul>
-                    </section>
-                    
-                </section>
-
-                <!-- right side -->
-
-                <!-- topbar -->
-                <section class="col-8 chat d-flex flex-column">
-                    <header class="top-bar d-flex justify-content-between ">
-                        <div class="col-3 ">
-                            <figure class="contact pointer">
-                                <img 
-                                    :src="`./img/avatar${data.user.avatar}.jpg`" 
-                                    :alt="data.user.name">
-                                    <div class="h5 d-inline ms-2">
-                                        {{data.user.name}}
-                                    </div>
-                            </figure>
-                        </div>
-                        <div class="col-2 d-flex justify-content-around align-items-center pe-3" id="buttons">
-                            <i class="fas fa-search fa-2x pointer"></i>
-                            <i class="fas fa-ellipsis-h fa-2x pointer"></i>
-                        </div>
-                    </header>
-
-                    <!-- chatbox -->
-                    <section class="flex-grow-1 overflow-auto" id="chatbox">
-
-                    </section>
-
-                    <!-- type text -->
-                    <footer class="d-flex align-items-center justify-content-around col-12" id="text-input">
-                        <div class="col-1 text-center">
-                            <i class="far fa-smile fa-2x pointer"></i>
-                        </div>
-                        <section class="p-2 search-bar col-9">
-                            <i class="fas fa-search"></i>
-                            <input type="text" placeholder="Scrivi un messaggio" class="w-100 search">
-                        </section>
-                        
-                        <div class="col-1 text-center">
-                            <i class="fas fa-microphone fa-2x pointer"></i>
-                        </div>
-                    </footer>
-
-                </section>
-                
+              <div class="col-9">
+                <div class="h6">Ricevi notifiche di nuovi messaggi</div>
+                <div class="text-muted pointer">
+                  <u>Attiva notifiche desktop</u>
+                </div>
+              </div>
             </div>
+
+            <!-- search-bar -->
+            <section class="p-2 search-bar">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                placeholder="Cerca o inizia una nuova chat"
+                class="w-100 search"
+              />
+            </section>
+
+            <!-- contacts list -->
+            <section class="flex-grow-1 overflow-auto" id="chats">
+              <ul class="p-0">
+                <li
+                  class="py-2 pointer"
+                  v-for="(contact, index) in data.contacts"
+                >
+                  <figure class="contact">
+                    <img
+                      :src="`./img/avatar${contact.avatar}.jpg`"
+                      :alt="contact.name"
+                    />
+                    <div class="h5 d-inline ms-2">{{contact.name}}</div>
+                  </figure>
+                </li>
+              </ul>
+            </section>
+          </section>
+
+          <!-- right side -->
+
+          <!-- topbar -->
+          <section class="col-8 chat d-flex flex-column">
+            <header class="top-bar d-flex justify-content-between">
+              <div class="col-3">
+                <figure class="contact pointer">
+                  <img
+                    :src="`./img/avatar${data.user.avatar}.jpg`"
+                    :alt="data.user.name"
+                  />
+                  <div class="h5 d-inline ms-2">{{data.user.name}}</div>
+                </figure>
+              </div>
+              <div
+                class="
+                  col-2
+                  d-flex
+                  justify-content-around
+                  align-items-center
+                  pe-3
+                "
+                id="buttons"
+              >
+                <i class="fas fa-search fa-2x pointer"></i>
+                <i class="fas fa-ellipsis-h fa-2x pointer"></i>
+              </div>
+            </header>
+
+            <!-- chatbox -->
+            <section class="flex-grow-1 overflow-auto" id="chatbox"></section>
+
+            <!-- type text -->
+            <footer
+              class="d-flex align-items-center justify-content-around col-12"
+              id="text-input"
+            >
+              <div class="col-1 text-center">
+                <i class="far fa-smile fa-2x pointer"></i>
+              </div>
+              <section class="p-2 search-bar col-9">
+                <input
+                  type="text"
+                  placeholder="Scrivi un messaggio"
+                  class="w-100 search ps-2"
+                />
+              </section>
+
+              <div class="col-1 text-center">
+                <i class="fas fa-microphone fa-2x pointer"></i>
+              </div>
+            </footer>
+          </section>
         </div>
-        
+      </div>
     </section>
     <script src="./js/users.js"></script>
-<script src="./js/script.js"></script>
-</body>
-
+    <script src="./js/script.js"></script>
+  </body>
 </html>
