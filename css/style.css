@@ -86,7 +86,7 @@ body {
   background-color: #eaeaea;
 }
 
-.selected {
+li .selected {
   background-color: #eaeaea;
 }
 
