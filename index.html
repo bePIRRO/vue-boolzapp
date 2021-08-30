@@ -32,8 +32,8 @@
                         <div class="col-6 ">
                             <figure class="contact pointer">
                                 <img 
-                                    :src="`./img/avatar${user.avatar}.jpg`" 
-                                    :alt="user.name">
+                                    :src="`./img/avatar${data.user.avatar}.jpg`" 
+                                    :alt="data.user.name">
                                     <div class="h5 d-inline ms-2">
                                         {{data.user.name}}
                                     </div>
@@ -67,7 +67,7 @@
                     <!-- contacts list -->
                     <section class="flex-grow-1 overflow-auto" id="chats">
                         <ul class="p-0">
-                            <li class="py-2 pointer" v-for="(contact, index) in contacts">
+                            <li class="py-2 pointer" v-for="(contact, index) in data.contacts">
                                 <figure class="contact">
                                     <img 
                                     :src="`./img/avatar${contact.avatar}.jpg`" 
@@ -90,10 +90,10 @@
                         <div class="col-3 ">
                             <figure class="contact pointer">
                                 <img 
-                                    :src="`./img/avatar${user.avatar}.jpg`" 
-                                    :alt="user.name">
+                                    :src="`./img/avatar${data.user.avatar}.jpg`" 
+                                    :alt="data.user.name">
                                     <div class="h5 d-inline ms-2">
-                                        {{user.name}}
+                                        {{data.user.name}}
                                     </div>
                             </figure>
                         </div>
