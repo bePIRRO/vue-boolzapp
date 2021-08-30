@@ -146,9 +146,12 @@
               <ul>
                 <li
                   v-for="message in data.contacts[data.currentContact].messages"
+                  class="message-box"
+                  :class="message.status"
                 >
-                  <div class="p-2 rounded-3">
+                  <div class="p-2 message">
                     <p>{{message.message}}</p>
+                    <time datetime="message.date">{{message.date}}</time>
                   </div>
                 </li>
               </ul>

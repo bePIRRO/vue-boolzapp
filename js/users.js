@@ -31,7 +31,7 @@ const data = {
     },
     {
       name: "Fabio",
-      avatar: "_2",
+      avatar: "_4",
       visible: true,
       messages: [
         {
@@ -47,7 +47,7 @@ const data = {
         {
           date: "20/03/2020 16:35:00",
           message: "Mi piacerebbe ma devo andare a fare la spesa.",
-          status: "received",
+          status: "sent",
         },
       ],
     },
@@ -75,7 +75,7 @@ const data = {
     },
     {
       name: "Luisa",
-      avatar: "_4",
+      avatar: "_2",
       visible: true,
       messages: [
         {
