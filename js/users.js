@@ -1,4 +1,6 @@
 const data = {
+  currentContact: 0,
+
   user: {
     name: "bePIRRO",
     avatar: "_io",

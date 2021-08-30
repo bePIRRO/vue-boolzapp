@@ -7,5 +7,9 @@ var app = new Vue({
   data: {
     data,
   },
-  methods: {},
+  methods: {
+    setCurrentContact(index) {
+      this.data.currentContact = index;
+    },
+  },
 });

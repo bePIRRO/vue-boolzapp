@@ -96,6 +96,7 @@
                 <li
                   class="py-2 pointer"
                   v-for="(contact, index) in data.contacts"
+                  @click="setCurrentContact(index)"
                 >
                   <figure class="contact">
                     <img
@@ -117,10 +118,12 @@
               <div class="col-3">
                 <figure class="contact pointer">
                   <img
-                    :src="`./img/avatar${data.user.avatar}.jpg`"
-                    :alt="data.user.name"
+                    :src="`./img/avatar${data.contacts[data.currentContact].avatar}.jpg`"
+                    :alt="data.contacts[data.currentContact].name"
                   />
-                  <div class="h5 d-inline ms-2">{{data.user.name}}</div>
+                  <div class="h5 d-inline ms-2">
+                    {{data.contacts[data.currentContact].name}}
+                  </div>
                 </figure>
               </div>
               <div
@@ -139,7 +142,17 @@
             </header>
 
             <!-- chatbox -->
-            <section class="flex-grow-1 overflow-auto" id="chatbox"></section>
+            <section class="flex-grow-1 overflow-auto" id="chatbox">
+              <ul>
+                <li
+                  v-for="message in data.contacts[data.currentContact].messages"
+                >
+                  <div class="p-2 rounded-3">
+                    <p>{{message.message}}</p>
+                  </div>
+                </li>
+              </ul>
+            </section>
 
             <!-- type text -->
             <footer
