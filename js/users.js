@@ -1,5 +1,6 @@
 const data = {
   currentContact: 0,
+  search: "",
 
   user: {
     name: "bePIRRO",
