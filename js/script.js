@@ -40,19 +40,37 @@ var app = new Vue({
 
     // search
 
-    filteredList() {
+    /*filteredList() {
       return this.data.contacts.filter((data) => {
         return data.contacts.name
           .toLowercase()
           .includes(this.search.toLowercase());
       });
+    },*/
+
+    isVisible(name) {
+      var result = false;
+
+      if (this.search.trim() == "") result = true;
+      else {
+        result = name.includes(this.search.trim());
+      }
+
+      return result;
     },
 
-    // print time
-
-    // printTime() {
-    //   const hm,
-    //   hm = this.data.contacts.date;
-    // },
+    /*darkMode() {
+      const active = false,
+      const link = ""
+      link = getElementById("dark-mode")
+      if (active === false) {
+        !active,
+        link = "./css/dark-mode.css"
+      } else {
+        !active,
+        link = "",
+      },
+        
+    },*/
   },
 });

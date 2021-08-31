@@ -26,18 +26,19 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" href="./img/Whatsapp_37229.ico" />
+    <!-- <link rel="stylesheet" href="./css/dark-mode.css" /> -->
     <title>Boolzapp</title>
   </head>
 
-  <body>
+  <body class="body-bg" id="dark-body">
     <section class="main-box" id="app">
       <div class="container-fluid vh-100 d-flex p-4">
-        <div class="container d-flex p-0 box">
+        <div class="container d-flex p-0 box dark-box">
           <!-- left side -->
 
           <!-- topbar -->
           <section class="col-4 contacts d-flex flex-column flex-shrink-0">
-            <header class="top-bar d-flex justify-content-between">
+            <header class="top-bar d-flex justify-content-between dark-box">
               <div class="col-6">
                 <figure class="contact pointer">
                   <img
@@ -49,7 +50,7 @@
               </div>
               <div
                 class="
-                  col-5
+                  col-3
                   d-flex
                   justify-content-around
                   align-items-center
@@ -57,15 +58,22 @@
                 "
                 id="buttons"
               >
-                <i class="fas fa-circle-notch fa-2x pointer"></i>
-                <i class="fas fa-comment-alt fa-2x pointer"></i>
-                <i class="fas fa-ellipsis-v fa-2x pointer"></i>
+                <i class="fas fa-circle-notch pointer" @click="darkMode()"></i>
+                <i class="fas fa-comment-alt pointer"></i>
+                <i class="fas fa-ellipsis-v pointer"></i>
               </div>
             </header>
 
             <!-- blue notification -->
             <div
-              class="d-flex align-items-center ps-4 flex-shrink-0 notification"
+              class="
+                d-flex
+                align-items-center
+                ps-4
+                flex-shrink-0
+                notification
+                dark-notification
+              "
             >
               <div class="col-3">
                 <i class="fas fa-bell-slash fa-2x rounded-circle p-3"></i>
@@ -80,12 +88,12 @@
             </div>
 
             <!-- search-bar -->
-            <section class="p-2 search-bar">
+            <section class="p-2 search-bar dark-search-bar">
               <i class="fas fa-search"></i>
               <input
                 type="text"
                 placeholder="Cerca o inizia una nuova chat"
-                class="w-100 search"
+                class="w-100 search dark-text-bg"
                 v-model="search"
               />
             </section>
@@ -115,7 +123,7 @@
 
           <!-- topbar -->
           <section class="col-8 chat d-flex flex-column">
-            <header class="top-bar d-flex justify-content-between">
+            <header class="top-bar d-flex justify-content-between dark-box">
               <div class="col-3">
                 <figure class="contact m-0">
                   <img
@@ -130,7 +138,7 @@
               </div>
               <div
                 class="
-                  col-2
+                  col-1
                   d-flex
                   justify-content-around
                   align-items-center
@@ -138,13 +146,13 @@
                 "
                 id="buttons"
               >
-                <i class="fas fa-search fa-2x pointer"></i>
-                <i class="fas fa-ellipsis-h fa-2x pointer"></i>
+                <i class="fas fa-search pointer"></i>
+                <i class="fas fa-ellipsis-h pointer"></i>
               </div>
             </header>
 
             <!-- chatbox -->
-            <section class="flex-grow-1 overflow-auto chatbox">
+            <section class="flex-grow-1 overflow-auto chatbox dark-chatbox">
               <ul>
                 <li
                   v-for="message in data.contacts[data.currentContact].messages"
@@ -161,16 +169,22 @@
 
             <!-- type text -->
             <footer
-              class="d-flex align-items-center justify-content-around col-12"
-              id="text-input"
+              class="
+                d-flex
+                align-items-center
+                justify-content-around
+                col-12
+                dark-box
+                text-input
+              "
             >
               <div class="col-1 text-center">
                 <i class="far fa-smile fa-2x pointer"></i>
               </div>
-              <section class="p-2 search-bar col-9">
+              <section class="p-2 search-bar col-9 dark-search-bar">
                 <input
                   type="text"
-                  class="w-100 search ps-2"
+                  class="w-100 search ps-2 dark-text-bg"
                   placeholder="Scrivi un messaggio"
                   v-model.trim="newMessage"
                   @keyup.enter="sendMessage"

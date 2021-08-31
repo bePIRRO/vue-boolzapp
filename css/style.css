@@ -4,7 +4,7 @@
 }
 
 /* body */
-body {
+.body-bg {
   background: linear-gradient(#009688 0 0) top,
     linear-gradient(#d8dbd6, #d2dbdc 0 0) bottom;
 
@@ -94,7 +94,7 @@ body {
   background-image: url(../img/mine.jpg);
 }
 
-#text-input {
+.text-input {
   height: 80px;
   background-color: #eaeaea;
 }
@@ -144,44 +144,4 @@ footer .search {
   text-align: right;
   font-size: 11px;
   color: #b1b1b1;
-}
-
-/*!!!!!!!! - DARK MODE - !!!!!!!! */
-
-.dark-body {
-  background-color: #0a0f12;
-}
-
-.dark-box {
-  background-color: #141d22;
-}
-
-.dark-top-bar {
-  background-color: #141d22;
-}
-
-.dark-notification {
-  background-color: #095474;
-}
-
-.dark-notification i {
-  color: #095474;
-  background-color: #8eb2be;
-}
-
-.dark-search-bar {
-  background-color: #33383a;
-  color: #b1b1b1;
-}
-
-.dark-chatbox {
-  background-image: url(../img/mine-dark.jpg);
-}
-
-.dark-sent {
-  background-color: #066263;
-}
-
-.dark-received {
-  background-color: #272e32;
 }
