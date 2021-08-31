@@ -26,7 +26,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" href="./img/Whatsapp_37229.ico" />
-    <!-- <link rel="stylesheet" href="./css/dark-mode.css" /> -->
     <title>Boolzapp</title>
   </head>
 
@@ -42,10 +41,10 @@
               <div class="col-6">
                 <figure class="contact pointer">
                   <img
-                    :src="`./img/avatar${data.user.avatar}.jpg`"
-                    :alt="data.user.name"
+                    :src="`./img/avatar${user.avatar}.jpg`"
+                    :alt="user.name"
                   />
-                  <div class="h5 d-inline ms-2">{{data.user.name}}</div>
+                  <div class="h5 d-inline ms-2">{{user.name}}</div>
                 </figure>
               </div>
               <div
@@ -102,10 +101,11 @@
             <section class="flex-grow-1 overflow-auto" id="chats">
               <ul class="p-0">
                 <li
-                  v-for="(contact, index) in data.contacts"
+                  v-if="isVisible(contact.name)"
+                  v-for="(contact, index) in contacts"
                   @click="setCurrentContact(index)"
                   class="py-2 pointer"
-                  :class="index === currentContact ? selected : null"
+                  :class="(index === currentContact) ? 'selected' : ''"
                 >
                   <figure class="contact">
                     <img
@@ -128,11 +128,11 @@
                 <figure class="contact m-0">
                   <img
                     class="pointer"
-                    :src="`./img/avatar${data.contacts[data.currentContact].avatar}.jpg`"
-                    :alt="data.contacts[data.currentContact].name"
+                    :src="`./img/avatar${contacts[currentContact].avatar}.jpg`"
+                    :alt="contacts[currentContact].name"
                   />
                   <div class="h5 d-inline ms-2">
-                    {{data.contacts[data.currentContact].name}}
+                    {{contacts[currentContact].name}}
                   </div>
                 </figure>
               </div>
@@ -155,7 +155,7 @@
             <section class="flex-grow-1 overflow-auto chatbox dark-chatbox">
               <ul>
                 <li
-                  v-for="message in data.contacts[data.currentContact].messages"
+                  v-for="message in contacts[currentContact].messages"
                   class="message-box"
                   :class="message.status"
                 >
@@ -199,7 +199,6 @@
         </div>
       </div>
     </section>
-    <script src="./js/users.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
