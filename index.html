@@ -29,15 +29,19 @@
     <title>Boolzapp</title>
   </head>
 
-  <body class="body-bg" id="dark-body">
-    <section class="main-box" id="app">
+  <body>
+    <section
+      class="main-box body-bg"
+      :class="(dark === true) ? 'dark' : ''"
+      id="app"
+    >
       <div class="container-fluid vh-100 d-flex p-4">
-        <div class="container d-flex p-0 box dark-box">
+        <div class="container d-flex p-0 box">
           <!-- left side -->
 
           <!-- topbar -->
           <section class="col-4 contacts d-flex flex-column flex-shrink-0">
-            <header class="top-bar d-flex justify-content-between dark-box">
+            <header class="top-bar d-flex justify-content-between">
               <div class="col-6">
                 <figure class="contact pointer">
                   <img
@@ -65,14 +69,7 @@
 
             <!-- blue notification -->
             <div
-              class="
-                d-flex
-                align-items-center
-                ps-4
-                flex-shrink-0
-                notification
-                dark-notification
-              "
+              class="d-flex align-items-center ps-4 flex-shrink-0 notification"
             >
               <div class="col-3">
                 <i class="fas fa-bell-slash fa-2x rounded-circle p-3"></i>
@@ -87,12 +84,12 @@
             </div>
 
             <!-- search-bar -->
-            <section class="p-2 search-bar dark-search-bar">
+            <section class="p-2 search-bar">
               <i class="fas fa-search"></i>
               <input
                 type="text"
                 placeholder="Cerca o inizia una nuova chat"
-                class="w-100 search dark-text-bg"
+                class="w-100 search search-bg"
                 v-model="search"
               />
             </section>
@@ -104,7 +101,7 @@
                   v-if="isVisible(contact.name)"
                   v-for="(contact, index) in contacts"
                   @click="setCurrentContact(index)"
-                  class="py-2 pointer"
+                  class="py-2 pointer chatlist"
                   :class="(index === currentContact) ? 'selected' : ''"
                 >
                   <figure class="contact">
@@ -123,7 +120,7 @@
 
           <!-- topbar -->
           <section class="col-8 chat d-flex flex-column">
-            <header class="top-bar d-flex justify-content-between dark-box">
+            <header class="top-bar d-flex justify-content-between">
               <div class="col-3">
                 <figure class="contact m-0">
                   <img
@@ -152,7 +149,7 @@
             </header>
 
             <!-- chatbox -->
-            <section class="flex-grow-1 overflow-auto chatbox dark-chatbox">
+            <section class="flex-grow-1 overflow-auto chatbox">
               <ul>
                 <li
                   v-for="message in contacts[currentContact].messages"
@@ -174,17 +171,16 @@
                 align-items-center
                 justify-content-around
                 col-12
-                dark-box
                 text-input
               "
             >
               <div class="col-1 text-center">
                 <i class="far fa-smile fa-2x pointer"></i>
               </div>
-              <section class="p-2 search-bar col-9 dark-search-bar">
+              <section class="p-2 search-bar col-9">
                 <input
                   type="text"
-                  class="w-100 search ps-2 dark-text-bg"
+                  class="w-100 search ps-2 search-bg"
                   placeholder="Scrivi un messaggio"
                   v-model.trim="newMessage"
                   @keyup.enter="sendMessage"

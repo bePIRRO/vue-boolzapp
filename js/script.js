@@ -7,6 +7,7 @@ var app = new Vue({
   data: {
     currentContact: 0,
     newMessage: "",
+    dark: false,
 
     user: {
       name: "bePIRRO",
@@ -126,18 +127,10 @@ var app = new Vue({
           date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
         };
         this.contacts[this.currentContact].messages.push(replyMessage);
-      }, 1000);
+      }, 3000);
     },
 
     // search
-
-    /*filteredList() {
-      return this.contacts.filter((data) => {
-        return contacts.name
-          .toLowercase()
-          .includes(this.search.toLowercase());
-      });
-    },*/
 
     isVisible(name) {
       var result = false;
@@ -150,18 +143,10 @@ var app = new Vue({
       return result;
     },
 
-    /*darkMode() {
-      const active = false,
-      const link = ""
-      link = getElementById("dark-mode")
-      if (active === false) {
-        !active,
-        link = "./css/dark-mode.css"
-      } else {
-        !active,
-        link = "",
-      },
-        
-    },*/
+    // ! DARK MODE
+
+    darkMode() {
+      return this.dark === true ? "dark" : (this.dark = !this.dark), "";
+    },
   },
 });

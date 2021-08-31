@@ -82,7 +82,7 @@
   border-bottom: 1px solid #eaeaea;
 }
 
-#chats li:hover {
+.chatlist:hover {
   background-color: #eaeaea;
 }
 
@@ -148,45 +148,62 @@ footer .search {
 
 /*!!!!!!!! - DARK MODE - !!!!!!!! */
 
-#dark.body {
-  background-color: #0a0f12;
+.dark.body-bg {
+  background: linear-gradient(#0a0f12 0 0);
   color: #b1b1b1;
 }
 
-.dark.box {
+.dark .box {
   background-color: #141d22;
 }
 
-.dark.notification {
+.dark .top-bar {
+  background-color: #141d22;
+}
+
+.dark .text-input {
+  background-color: #141d22;
+}
+
+.dark .notification {
   background-color: #095474;
 }
 
-.dark.notification i {
+.dark .notification i {
   color: #095474;
   background-color: #8eb2be;
 }
 
-.dark.search-bar {
-  background-color: #33383a;
+.dark .search-bar {
+  background-color: #141d22;
 }
 
-.dark.chatbox {
+.dark .search-bg {
+  background-color: #33383a;
+  color: #fff;
+}
+
+.dark .chatbox {
   background-image: url(../img/mine-dark.jpg);
 }
 
-.message-box.dark.sent .message {
+.dark .sent .message {
   background-color: #066263;
   margin-right: 2rem;
 }
 
-.message-box.dark.received .message {
+.dark .received .message {
   background-color: #272e32;
 }
 
-#chats.dark li:hover {
+.dark .chatlist:hover {
   background-color: #33383a;
 }
 
-.dark.text-bg {
+.dark .selected {
+  background-color: #33383a;
+}
+
+.dark .text-bg {
   background-color: #33383a;
 }
