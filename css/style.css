@@ -146,6 +146,10 @@ footer .search {
   color: #b1b1b1;
 }
 
+#buttons i:hover {
+  color: #0a0f12;
+}
+
 /*!!!!!!!! - DARK MODE - !!!!!!!! */
 
 .dark.body-bg {
