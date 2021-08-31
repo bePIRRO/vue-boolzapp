@@ -87,6 +87,7 @@
                 type="text"
                 placeholder="Cerca o inizia una nuova chat"
                 class="w-100 search"
+                v-model="search"
               />
             </section>
 
@@ -94,9 +95,10 @@
             <section class="flex-grow-1 overflow-auto" id="chats">
               <ul class="p-0">
                 <li
-                  class="py-2 pointer"
                   v-for="(contact, index) in data.contacts"
                   @click="setCurrentContact(index)"
+                  class="py-2 pointer"
+                  :class="index === currentContact ? selected : null"
                 >
                   <figure class="contact">
                     <img

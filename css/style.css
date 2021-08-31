@@ -86,7 +86,7 @@ body {
   background-color: #eaeaea;
 }
 
-li .selected {
+.selected {
   background-color: #eaeaea;
 }
 
@@ -115,6 +115,7 @@ footer .search {
 
 .message {
   border-radius: 10px;
+  max-width: 300px;
 }
 
 .message-box.sent {

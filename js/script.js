@@ -37,5 +37,22 @@ var app = new Vue({
         );
       }, 1000);
     },
+
+    // search
+
+    filteredList() {
+      return this.data.contacts.filter((data) => {
+        return data.contacts.name
+          .toLowercase()
+          .includes(this.search.toLowercase());
+      });
+    },
+
+    // print time
+
+    // printTime() {
+    //   const hm,
+    //   hm = this.data.contacts.date;
+    // },
   },
 });
