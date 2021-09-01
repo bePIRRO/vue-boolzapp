@@ -143,10 +143,8 @@ var app = new Vue({
       return result;
     },
 
-    // ! DARK MODE
-
-    darkMode() {
-      return this.dark === true ? "dark" : (this.dark = !this.dark), "";
+    deleteMessage(index) {
+      this.message.splice(index, 1);
     },
   },
 });
