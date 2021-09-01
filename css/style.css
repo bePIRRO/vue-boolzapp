@@ -146,11 +146,16 @@ footer .search {
   color: #b1b1b1;
 }
 
-#buttons i:hover {
+#buttons i:hover,
+u:hover {
   color: #0a0f12;
 }
 
-/*!!!!!!!! - DARK MODE - !!!!!!!! */
+footer i:hover {
+  color: #a1a1a1;
+}
+
+/*!! - DARK MODE - !! */
 
 .dark.body-bg {
   background: linear-gradient(#0a0f12 0 0);
@@ -210,4 +215,10 @@ footer .search {
 
 .dark .text-bg {
   background-color: #33383a;
+}
+
+.dark #buttons i:hover,
+.dark footer i:hover,
+.dark u:hover {
+  color: #fff;
 }

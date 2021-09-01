@@ -144,13 +144,14 @@ var app = new Vue({
     },
 
     deleteMessage(index) {
-      this.message.splice(index, 1);
+      this.contacts.messages.splice(index, 1);
     },
 
-    // ! DARK MODE
+    // ! DARK MODE ! //
 
     darkMode() {
-      return this.dark === true ? "dark" : (this.dark = !this.dark), "";
+      const active = "off";
+      return this.dark === true ? "dark" : (this.dark = !this.dark);
     },
   },
 });
