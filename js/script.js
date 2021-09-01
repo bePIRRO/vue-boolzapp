@@ -150,8 +150,7 @@ var app = new Vue({
     // ! DARK MODE ! //
 
     darkMode() {
-      const active = "off";
-      return this.dark === true ? "dark" : (this.dark = !this.dark);
+      return (this.dark = !this.dark);
     },
   },
 });
