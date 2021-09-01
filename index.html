@@ -62,8 +62,8 @@
                 id="buttons"
               >
                 <i
-                  class="fas fa-toggle-off pointer"
-                  alt="Dark Mode"
+                  class="fas pointer"
+                  :class="(dark === true) ? 'fa-toggle-on' : 'fa-toggle-off'"
                   @click="darkMode()"
                   id="toggle"
                 ></i>
