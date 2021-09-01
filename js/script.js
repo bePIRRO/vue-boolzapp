@@ -146,5 +146,11 @@ var app = new Vue({
     deleteMessage(index) {
       this.message.splice(index, 1);
     },
+
+    // ! DARK MODE
+
+    darkMode() {
+      return this.dark === true ? "dark" : (this.dark = !this.dark), "";
+    },
   },
 });
